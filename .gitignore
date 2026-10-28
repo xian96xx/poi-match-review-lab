@@ -1,0 +1,12 @@
+# Local and generated files
+.env
+.env.*
+node_modules/
+local/
+*.log
+*.tmp
+__pycache__/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+poi-review-results.csv

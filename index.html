@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>POI 匹配复核台</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="top"><div><p class="eyebrow">POI MATCH REVIEW LAB · OFFLINE DEMO</p><h1>门店信息匹配复核台</h1><p>把跨平台门店匹配拆成可解释的候选与人工判断。</p></div><span class="offline">本地运行 · 无地图接口</span></header>
+<main>
+<section class="notice"><strong>演示数据说明</strong><span>内置的所有门店、地点和平台均为原创虚构。匹配结果是待复核候选，分数不代表真实业务准确率。</span></section>
+<section class="panel"><div class="section-head"><div><p class="eyebrow">01 / INPUT</p><h2>准备数据</h2><p>使用内置案例，或导入自己有权处理的两份 UTF-8 CSV。</p></div><button id="demo" class="primary">加载合成演示</button></div>
+<div class="filegrid"><label class="filebox">参考表 CSV<input id="refFile" type="file" accept=".csv,text/csv"><small>ref_id, platform, platform_id, name, city, address</small></label><label class="filebox">候选表 CSV<input id="candFile" type="file" accept=".csv,text/csv"><small>platform, platform_id, name, city, address</small></label><button id="importBtn">导入并匹配</button></div>
+<p class="subtle">每个文件最多 1 MiB、2000 行。数据只在当前页面内存中处理；关闭或刷新页面会清除未导出的复核结果。</p><p id="message" role="status" aria-live="polite"></p></section>
+<section class="panel"><div class="section-head"><div><p class="eyebrow">02 / OVERVIEW</p><h2>匹配概览</h2><p>每条参考记录计一次，匹配分类不等于正确率。</p></div><button id="download" disabled>导出复核 CSV</button></div><div id="stats" class="stats"><div class="empty">加载数据后显示统计。</div></div><p id="distribution" class="subtle"></p></section>
+<section class="panel"><div class="section-head"><div><p class="eyebrow">03 / REVIEW</p><h2>逐条复核</h2><p>模糊匹配、冲突及多候选都需人工判断。确认或退回前请写原因。</p></div><label class="filter">筛选 <select id="filter"><option value="all">全部记录</option><option value="pending">待复核</option><option value="confirmed">已确认</option><option value="rejected">已退回</option><option value="no_candidate">确认暂无线索</option></select></label></div><div id="results" class="results"><div class="empty">这里会展示参考记录、候选和评分依据。</div></div></section>
+<footer>独立实现的公开演示 · 以门店信息核对流程为背景 · 不连接任何地图服务</footer>
+</main><script src="core.js"></script><script src="demo-data.js"></script><script src="app.js"></script>
+</body></html>

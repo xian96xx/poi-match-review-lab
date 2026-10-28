@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "POI Match Review Lab",
+  "version": "1.0.0",
+  "description": "Offline synthetic POI matching and review demo",
+  "action": {"default_title": "打开 POI 匹配复核台"},
+  "background": {"service_worker": "background.js"}
+}
