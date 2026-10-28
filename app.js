@@ -5,7 +5,7 @@
   const decisions={pending:'待复核',confirmed:'已确认',rejected:'已退回',no_candidate:'确认暂无线索'};
   let results=[];
   function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=String(text);if(cls)e.className=cls;return e;}
-  function message(text,isError=false){$('message').textContent=text;$('message').style.color=isError?'#a93b33':'#176d5a';}
+  function message(text,isError=false){$('message').textContent=text;$('message').style.color=isError?'#ff9a9a':'#7edca6';}
   function run(refs,cands,source){
     if (!refs.length) throw new Error('参考表没有数据行。');
     results=C.evaluate(refs,cands);$('download').disabled=false; $('filter').value='all';render();
